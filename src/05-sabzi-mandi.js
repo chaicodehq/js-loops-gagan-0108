@@ -29,6 +29,31 @@
  *   sabziMandiBill([], { aloo: 30 })
  *   // => { items: [], totalBill: 0 }
  */
-export function sabziMandiBill(shoppingList, priceList) {
-  // Your code here
+export function sabziMandiBill(shoppingList, priceList) {  
+  let totalBill = 0;
+  let arr=[];
+
+  for ( const obj of shoppingList){
+    let sabzi= obj["name"];
+    let price = priceList[sabzi];
+    if (!(sabzi in priceList)) continue;  
+    let qty = obj["qty"];
+
+    if ( price > 80 ) continue;
+    else totalBill+= price*qty;
+    // console.log(sabzi , quantity , price )
+    arr.push(
+      {
+        name:sabzi.toString(), 
+        qty , 
+        cost : price*qty,
+      }
+    );
+  }
+  return { items: arr , totalBill}
 }
+
+// console.log(sabziMandiBill(
+//         [{ name: "aloo", qty: 2 }],
+//         { aloo: 30 }
+//       ))
