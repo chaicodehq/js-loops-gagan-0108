@@ -37,5 +37,21 @@
  *   // Sorted: CSK(3), RCB(1), MI(0)
  */
 export function iplPointsTable(matches) {
-  // Your code here
+  let arr = [];
+  for ( let i = 0 ; i< matches.length ; i++){
+    const obj = matches[i];
+    arr.push[
+      {
+        team:,
+        played,
+        won,
+        lost,
+        tied,
+        noResult,
+        points
+      }
+    ]
+  }
+
+
 }
